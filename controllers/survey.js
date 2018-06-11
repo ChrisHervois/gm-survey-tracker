@@ -18,9 +18,9 @@ module.exports = {
       'start': { 'dateTime': `${req.body.date}T${req.body.time}:00-07:00` },
       'end': { 'dateTime': `${req.body.date}T${req.body.time}:00-08:00` },
       'location': `${req.body.address}, ${req.body.address2}, ${req.body.city}, ${req.body.state} ${req.body.zip}`,
-      'summary': `NAME: ${req.body.first} ${req.body.last}, AGE: ${req.body.age}, PHONE: ${req.body.phone}, ENC (${req.session.name})`, 
+      'summary': `ENC (${req.session.name}) ${req.body.first} ${req.body.last} (${req.body.age})`, 
       'status': 'confirmed',
-      'description': req.body.comment,
+      'description': `${req.body.phone}, ${req.body.comment}`,
       'colorId': 1
     };
 
