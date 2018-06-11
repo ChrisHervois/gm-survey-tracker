@@ -9,19 +9,16 @@ const calendarId = 'chris.hervois@gmail.com'
 
 module.exports = {
   index: function(req, res) {
-    res.render("index");
+    
+    res.render("survey", {user:req.session.name});
   },
 
   createEvent: function (req, res) {
-    
-    
-    
     let event = {
-      // phone number
       'start': { 'dateTime': `${req.body.date}T${req.body.time}:00-07:00` },
       'end': { 'dateTime': `${req.body.date}T${req.body.time}:00-08:00` },
       'location': `${req.body.address}, ${req.body.address2}, ${req.body.city}, ${req.body.state} ${req.body.zip}`,
-      'summary': `NAME: ${req.body.first} ${req.body.last}, AGE: ${req.body.age}`,
+      'summary': `NAME: ${req.body.first} ${req.body.last}, AGE: ${req.body.age}, PHONE: ${req.body.phone}, ENC (${req.session.name})`, 
       'status': 'confirmed',
       'description': req.body.comment,
       'colorId': 1
@@ -37,6 +34,6 @@ module.exports = {
       });
 
 
-      res.redirect('/')
+      res.redirect('/survey')
   }
 }

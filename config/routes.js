@@ -1,7 +1,9 @@
-//Update the name of the controller below and rename the file.
-const template = require("../controllers/template.js")
+const root = require("../controllers/root.js")
+const survey = require("../controllers/survey.js")
 module.exports = function(app){
 
-  app.get('/', template.index);
-  app.post('/send', template.createEvent);
+  app.get('/', root.index);
+  app.post('/login', root.login)
+  app.get('/survey', survey.index)
+  app.post('/send', survey.createEvent);
 }
