@@ -5,15 +5,17 @@
     <title></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
     <style>
-      #survey {
-        height: 100vh;
-        margin: 10px;
+      body {
+        background-color: aqua;
+      }
+      form {
+        margin-top: 5em;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <form action="/send" method="post" id="survey">
+      <form action="/send" method="post">
         <div class="form-row">
           <div class="form-group col-md-5">
             <input type="text" class="form-control" name="first" placeholder="First name">
