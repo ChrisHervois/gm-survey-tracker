@@ -10,24 +10,39 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script> -->
     <style>
-        /* body {
-            margin-top: 5em;
-            text-align: center;
+        body {
             background-color: #d5d5d5;
+            margin: 5em;
         }
-
-        h1,
-        h3 {
+    
+        h1, p {
             color: #6d7993;
-        } */
+        }
     </style>
 </head>
 
 <body>
-    <h1>Appointment Added</h1> <br>
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h1 class="display-4">Appointment has been added</h1>
+            <!-- <p class="lead">Nice job <%= user %></p> -->
+            <hr class="my-4">
+            <h3>Nice job
+                <%= user %>
+            </h3>
+            <h3>Keep up the good work!</h3>
+            <br>
+            <a class="btn btn-success btn-lg" href="/survey" role="button">New Form</a>
+        </div>
+    </div>
+
+
+
+
+    <!-- <h1>Appointment Added</h1> <br>
     <form action="/survey" method="get">
         <button type="submit">New Form</button>
-    </form>
+    </form> -->
     
 </body>
 

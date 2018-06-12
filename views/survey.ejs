@@ -7,21 +7,19 @@
     <style>
       body {
         background-color: #d5d5d5;
-      }
-      form {
-        margin-top: 5em;
+        margin: 5em;
       }
       h1 {
         text-align: center;
-        margin-top: 1em;
         color: #6d7993;
+        margin-bottom: 1em;
       }
     </style>
   </head>
   <body>
-    <h1>Welcome, you are signed in as <%=user%></h1>
+    <h1>Welcome <%=user%></h1> 
     
-    <div class="container">
+    <div class="container-fluid">
       <form action="/send" method="post" class="needs-validation" novalidate>
         <div class="form-row">
           <div class="form-group col-md-5">
