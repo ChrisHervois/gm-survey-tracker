@@ -4,17 +4,30 @@
     <meta charset="utf-8" />
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <title>Welcome</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script> -->
+    <style>
+        body {
+            margin-top: 5em;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Golden Memorial's</h1>
-    <h2>Survey Appointment Tracker</h2> <br>
-    <h3>Please enter your name to sign in</h3>
-    <form action="/login" method="post">
-        <input type="text" name="name" placeholder="Enter name">
-        <button type="submit">Login</button>
-    </form>
+    <div class="container-fluid">
+        <h1>Welcome to Golden Memorial's</h1>
+        <h2>Survey Appointment Tracker</h2>
+        <br>
+        <h3>Please enter your name to sign in</h3>
+        <form action="/login" method="post">
+            <div class="row justify-content-center">
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="name" placeholder="Enter name">
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

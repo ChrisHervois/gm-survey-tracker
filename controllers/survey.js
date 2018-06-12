@@ -17,10 +17,13 @@ module.exports = {
     let event = {
       'start': { 'dateTime': `${req.body.date}T${req.body.time}:00-07:00` },
       'end': { 'dateTime': `${req.body.date}T${req.body.time}:00-08:00` },
-      'location': `${req.body.address}, ${req.body.address2}, ${req.body.city}, ${req.body.state} ${req.body.zip}`,
+      'location': `${req.body.address}
+      ${req.body.address2}
+      ${req.body.city}, ${req.body.state} ${req.body.zip}`,
       'summary': `ENC (${req.session.name}) ${req.body.first} ${req.body.last} (${req.body.age})`, 
       'status': 'confirmed',
-      'description': `${req.body.phone}, ${req.body.comment}`,
+      'description': `${req.body.phone}
+      ${req.body.comment}`,
       'colorId': 1
     };
 
