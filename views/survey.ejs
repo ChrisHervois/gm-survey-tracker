@@ -2,20 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Welcome</title>
+    <title>Survey</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
     <style>
+      body {
+        background-color: #d5d5d5;
+      }
       form {
         margin-top: 5em;
       }
       h1 {
         text-align: center;
         margin-top: 1em;
+        color: #6d7993;
       }
     </style>
   </head>
   <body>
-    <h1>Welcome <%=user%></h1>
+    <h1>Welcome, you are signed in as <%=user%></h1>
     
     <div class="container">
       <form action="/send" method="post" class="needs-validation" novalidate>
@@ -134,14 +138,14 @@
           </div>
           <div class="form-group col-md-4">
             <label for="date">Appointment Date</label>
-            <input type="date" class="form-control" name="date" height="20" required>
+            <input type="date" class="form-control" name="date" required>
             <div class="invalid-feedback">
               Please select appointment date
             </div>
           </div>
           <div class="form-group col-md-4">
             <label for="time">Appointment Time</label>
-            <input type="time" class="form-control" name="time" height="20" required>
+            <input type="time" class="form-control" name="time" required>
             <div class="invalid-feedback">
               Please select appointment time
             </div>
@@ -151,7 +155,7 @@
           <label for="comment">Comment:</label>
           <textarea class="form-control" rows="5" name="comment"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-info">Submit</button>
       </form>
     </div>
 

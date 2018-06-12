@@ -26,14 +26,15 @@ module.exports = {
 
     cal.Events.insert(calendarId, event)
       .then(resp => {
-        console.log('inserted event:');
-        console.log(resp);
+        res.redirect('/confirm')
+        // console.log('inserted event:');
+        // console.log(resp);
       })
       .catch(err => {
         console.log('Error: insertEvent-' + err.message);
       });
 
 
-      res.redirect('/survey')
+      // res.redirect('/survey')
   }
 }
