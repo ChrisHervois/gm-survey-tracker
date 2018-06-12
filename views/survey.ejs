@@ -16,23 +16,35 @@
   </head>
   <body>
     <h1>Welcome <%=user%></h1>
-
+    
     <div class="container">
-      <form action="/send" method="post">
+      <form action="" method="post" class="needs-validation" novalidate>
         <div class="form-row">
           <div class="form-group col-md-5">
-            <input type="text" class="form-control" name="first" placeholder="First name">
+            <input type="text" class="form-control" name="first" placeholder="First name" required>
+            <div class="invalid-feedback">
+              Please enter first name
+            </div>
           </div>
           <div class="form-group col-md-5">
-            <input type="text" class="form-control" name="last" placeholder="Last name">
+            <input type="text" class="form-control" name="last" placeholder="Last name" required>
+            <div class="invalid-feedback">
+              Please enter last name
+            </div>
           </div>
           <div class="form-group col-md-2">
-            <input type="number" class="form-control" name="age" placeholder="Age">
+            <input type="number" class="form-control" name="age" placeholder="Age" required>
+            <div class="invalid-feedback">
+              Please enter age
+            </div>
           </div>
         </div>
         <div class="form-group">
           <label for="address">Address</label>
-          <input type="text" class="form-control" name="address" placeholder="1234 Main St">
+          <input type="text" class="form-control" name="address" placeholder="1234 Main St" required>
+          <div class="invalid-feedback">
+            Please enter address
+          </div>
         </div>
         <div class="form-group">
           <label for="address2">Address 2</label>
@@ -41,7 +53,10 @@
         <div class="form-row">
           <div class="form-group col-md-7">
             <label for="city">City</label>
-            <input type="text" class="form-control" name="city">
+            <input type="text" class="form-control" name="city" required>
+            <div class="invalid-feedback">
+              Please enter city
+            </div>
           </div>
           <div class="form-group col-md">
             <label for="state">State</label>
@@ -103,21 +118,33 @@
           </div>
           <div class="form-group col-md">
             <label for="zip">Zip</label>
-            <input type="text" class="form-control" name="zip">
+            <input type="text" class="form-control" name="zip" required>
+            <div class="invalid-feedback">
+              Please enter zip code
+            </div>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="phone">Phone Number</label>
-            <input type="tel" class="form-control" name="phone">
+            <input type="tel" class="form-control" name="phone" required>
+            <div class="invalid-feedback">
+              Please enter valid phone number
+            </div>
           </div>
           <div class="form-group col-md-4">
             <label for="date">Appointment Date</label>
-            <input type="date" class="form-control" name="date" placeholder="Select date">
+            <input type="date" class="form-control" name="date" required>
+            <div class="invalid-feedback">
+              Please select appointment date
+            </div>
           </div>
           <div class="form-group col-md-4">
             <label for="time">Appointment Time</label>
-            <input type="time" class="form-control" name="time" placeholder="Select time">
+            <input type="time" class="form-control" name="time" required>
+            <div class="invalid-feedback">
+              Please select appointment time
+            </div>
           </div>
         </div>
         <div class="form-group">
@@ -127,5 +154,26 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
+
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function (form) {
+            form.addEventListener('submit', function (event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
   </body>
 </html>
