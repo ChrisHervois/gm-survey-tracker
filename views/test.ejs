@@ -1,30 +1,51 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <title>Page Title</title>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+
 </head>
+
 <body>
-    <h1 id="result"></h1>
-    <button id="store">Store</button>
-    <br>
-    <button id="retrieve">Retrieve</button>
+    <button id="add">Add</button>
+    <button id="get">Get</button>
+
 
     <script>
-        let store = document.querySelector('#store');
-        let retrieve = document.querySelector('#retrieve');
+        const add = document.querySelector('#add');
+        const get = document.querySelector('#get');
+        const testObject = { 'one': 1, 'two': 2, 'three': 3 };
+        let i = 1;
 
-        store.addEventListener('click', ()=>{
-            localStorage.setItem("lastname", "Smith");
-        })
 
-        retrieve.addEventListener('click', () => {
-                document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-            })
+
+
+        add.addEventListener('click', () => {
+
+
+            // Put the object into storage
+            localStorage.setItem(`${i}`, JSON.stringify(testObject));
+            
+            i++;
+            console.log('three', JSON.stringify(testObject))
+
+
+        });
+
+        get.addEventListener('click', () => {
+            // Retrieve the object from storage
+            var retrievedObject = localStorage.getItem(`${num}`);
+
+            console.log('retrievedObject: ', JSON.parse(retrievedObject));
+        });
+
+
+
     </script>
 </body>
+
 </html>

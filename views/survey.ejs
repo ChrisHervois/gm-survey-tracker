@@ -1,268 +1,277 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Survey</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
-    <style>
-      body {
-        background-color: #9099a2;
-        margin: 1em 5em 5em 5em;
-      }
-      h1, h2 {
-        text-align: center;
-        color: #062f4f;
-        
-      }
-      .inline li {
-        display: inline;
-      }
-      .container-fluid {
-        background-color: #d5d5d5;
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }
-      h6 {
-        color: #233237;
-      }
-      .scripted {
-        color: #0a1612;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>FUNERAL ADVANTAGE – Neighborhood Survey</h1>
-    <h2>FINAL EXPENSE FUNDING AND PLANNING</h2> <br>
-    
 
+<head>
+  <meta charset="utf-8">
+  <title>Survey</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+  <style>
+    body {
+      background-color: #9099a2;
+      margin: 1em 5em 5em 5em;
+    }
 
+    h1,
+    h2 {
+      text-align: center;
+      color: #062f4f;
 
-    <!-- <h1>Welcome <%=user%></h1>  -->
-    
-    <div class="container-fluid">
-      <div class="top">
-        <form action="/send" method="post" class="needs-validation" novalidate>
-          <div class="form-row">
-            <p class="scripted">Hi, my name is
-              <strong>
-                <%=user%>
-              </strong>, with the
-              <strong>GOLDEN MEMORIAL AGENCY</strong>. We are in the area doing a quick survey for our agency. Please, could you give me
-              2-3 minutes to do a quick survey? THANK YOU! Have you ever seen a carwash on the corner raising money for Funeral Expenses?
-              This is a survey about addressing that concern. Let’s start with your name and age.</p>
-            <div class="form-group col-md-5">
-              <input type="text" class="form-control" name="first" placeholder="First name" required>
-              <div class="invalid-feedback">
-                Please enter first name
-              </div>
-            </div>
-            <div class="form-group col-md-5">
-              <input type="text" class="form-control" name="last" placeholder="Last name" required>
-              <div class="invalid-feedback">
-                Please enter last name
-              </div>
-            </div>
-            <div class="form-group col-md-2">
-              <input type="number" class="form-control" name="age" placeholder="Age" required>
-              <div class="invalid-feedback">
-                Please enter age
-              </div>
-            </div>
-          </div>
-      </div>
-      <hr>
-      <div class="middle">
-        <h6>* Which of the following methods do you think is most often used to pay for Funeral Expenses?</h6>
-        <ul class="inline">
-          <li>CAR WASH -</li>
-          <li>FAMILY LOANS -</li>
-          <li>SAVINGS -</li>
-          <li>OTHER</li>
-        </ul>
-        <h6>* By far, the biggest concern regarding Funeral Expenses is that the burden is usually left behind to a loved one who is
-        unprepared. There are four main reasons this happens, which of these categories would you place yourself in?</h6>
-        <ul>
-          <li><strong>FEAR</strong>, many people are scared to talk about the subject so they never discuss a plan</li>
-          <li><strong>PROCRASTINATION</strong>, many people wait for the ‘right time,’ but never get around to it</li>
-          <li><strong>AFFORDABILITY</strong>, many people think it is expensive to plan ahead so they don’t ever look into it</li>
-          <li><strong>QUALIFICATION</strong>, many people think they will be rejected due to sickness or age</li>
-        </ul>
-        <h6>* Do you know of someone or maybe you yourself have been in the rush of having to get the money for the funeral of a loved
-        one?</h6>
-        <ul class="inline">
-          <li>YES or</li>
-          <li>NO</li>
-        </ul>
-        <h6>* What would you prefer for your final arrangements?</h6>
-        <ul class="inline">
-          <li>BURIAL or</li>
-          <li>CREMATION</li>
-        </ul>
-        <h6>* How much do you estimate that would cost?</h6>
-        <h6>* Who will be responsible for your funeral arrangements someday?</h6>
-        <ul class="inline">
-          <li>FAMILY -</li>
-          <li>FRIEND -</li>
-          <li>OTHER -</li>
-          <li>DON'T KNOW</li>
-        </ul>
-        <h6>* How will your final arrangements be paid?</h6>
-        <ul class="inline">
-          <li>CAR WASH -</li>
-          <li>LOANS -</li>
-          <li>SAVINGS -</li>
-          <li>OTHER -</li>
-          <li>DON'T KNOW</li>
-        </ul>
-      </div>
-      <hr>
-      <div class="bottom">
-        <p class="scripted">We are the largest agency in the country in final expenses and we are struck by the little or no information that neighbors
-          in the area have regarding funeral expenses.
-          <strong>THE FUNERAL ADVANTAGE PLAN</strong> is a program that offers a
-          <strong>SIMPLE AND ECONOMIC</strong> solution to
-          <strong>PREVENT</strong> leaving this burden to your loved ones, we can solve this problem. You will be amazed at how easy it is
-          to qualify and right now the program is offering a
-          <strong>FREE</strong> Funeral Planning Membership for those who enroll with plans as low as $15/month. What would be good day to
-          visit you and be able to deliver your
-          <strong>PERSONALIZED PACKAGE INFORMATION</strong>, without any commitment on your part? (
-          <strong>NOTE</strong>: Give a tentative date for the appointment, no more than two days)</p>
-        <div class="form-group">
-          <label for="address">Address</label>
-          <input type="text" class="form-control" name="address" placeholder="1234 Main St" required>
-          <div class="invalid-feedback">
-            Please enter address
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="address2">Address 2</label>
-          <input type="text" class="form-control" name="address2" placeholder="Apartment, studio, or floor">
-        </div>
+    }
+
+    .inline li {
+      display: inline;
+    }
+
+    .container-fluid {
+      background-color: #d5d5d5;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    h6 {
+      color: #233237;
+    }
+
+    .scripted {
+      color: #0a1612;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>FUNERAL ADVANTAGE – Neighborhood Survey</h1>
+  <h2>FINAL EXPENSE FUNDING AND PLANNING</h2>
+  <br>
+  <div class="container-fluid">
+    <div class="top">
+      <form action="/send" method="post" class="needs-validation" novalidate>
         <div class="form-row">
-          <div class="form-group col-md-7">
-            <label for="city">City</label>
-            <input type="text" class="form-control" name="city" required>
+          <p class="scripted">Hi, my name is
+            <strong>
+              <%=user%>
+            </strong>, with the
+            <strong>GOLDEN MEMORIAL AGENCY</strong>. We are in the area doing a quick survey for our agency. Please, could you give
+            me 2-3 minutes to do a quick survey? THANK YOU! Have you ever seen a carwash on the corner raising money for
+            Funeral Expenses? This is a survey about addressing that concern. Let’s start with your name and age.</p>
+          <div class="form-group col-md-5">
+            <input type="text" class="form-control" name="first" placeholder="First name" required>
             <div class="invalid-feedback">
-              Please enter city
+              Please enter first name
             </div>
           </div>
-          <div class="form-group col-md">
-            <label for="state">State</label>
-            <select name="state" class="form-control">
-              <option value="AK">Alaska</option>
-              <option value="AL">Alabama</option>
-              <option value="AR">Arkansas</option>
-              <option value="AZ" selected>Arizona</option>
-              <option value="CA">California</option>
-              <option value="CO">Colorado</option>
-              <option value="CT">Connecticut</option>
-              <option value="DC">District of Columbia</option>
-              <option value="DE">Delaware</option>
-              <option value="FL">Florida</option>
-              <option value="GA">Georgia</option>
-              <option value="HI">Hawaii</option>
-              <option value="IA">Iowa</option>
-              <option value="ID">Idaho</option>
-              <option value="IL">Illinois</option>
-              <option value="IN">Indiana</option>
-              <option value="KS">Kansas</option>
-              <option value="KY">Kentucky</option>
-              <option value="LA">Louisiana</option>
-              <option value="MA">Massachusetts</option>
-              <option value="MD">Maryland</option>
-              <option value="ME">Maine</option>
-              <option value="MI">Michigan</option>
-              <option value="MN">Minnesota</option>
-              <option value="MO">Missouri</option>
-              <option value="MS">Mississippi</option>
-              <option value="MT">Montana</option>
-              <option value="NC">North Carolina</option>
-              <option value="ND">North Dakota</option>
-              <option value="NE">Nebraska</option>
-              <option value="NH">New Hampshire</option>
-              <option value="NJ">New Jersey</option>
-              <option value="NM">New Mexico</option>
-              <option value="NV">Nevada</option>
-              <option value="NY">New York</option>
-              <option value="OH">Ohio</option>
-              <option value="OK">Oklahoma</option>
-              <option value="OR">Oregon</option>
-              <option value="PA">Pennsylvania</option>
-              <option value="PR">Puerto Rico</option>
-              <option value="RI">Rhode Island</option>
-              <option value="SC">South Carolina</option>
-              <option value="SD">South Dakota</option>
-              <option value="TN">Tennessee</option>
-              <option value="TX">Texas</option>
-              <option value="UT">Utah</option>
-              <option value="VA">Virginia</option>
-              <option value="VT">Vermont</option>
-              <option value="WA">Washington</option>
-              <option value="WI">Wisconsin</option>
-              <option value="WV">West Virginia</option>
-              <option value="WY">Wyoming</option>
-        
-            </select>
-          </div>
-          <div class="form-group col-md">
-            <label for="zip">Zip</label>
-            <input type="text" class="form-control" name="zip" required>
+          <div class="form-group col-md-5">
+            <input type="text" class="form-control" name="last" placeholder="Last name" required>
             <div class="invalid-feedback">
-              Please enter zip code
+              Please enter last name
+            </div>
+          </div>
+          <div class="form-group col-md-2">
+            <input type="number" class="form-control" name="age" placeholder="Age" required>
+            <div class="invalid-feedback">
+              Please enter age
             </div>
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-group col-md-4">
-            <label for="phone">Phone Number</label>
-            <input type="tel" class="form-control" name="phone" required>
-            <div class="invalid-feedback">
-              Please enter valid phone number
-            </div>
-          </div>
-          <div class="form-group col-md-4">
-            <label for="date">Appointment Date</label>
-            <input type="date" class="form-control" name="date" required>
-            <div class="invalid-feedback">
-              Please select appointment date
-            </div>
-          </div>
-          <div class="form-group col-md-4">
-            <label for="time">Appointment Time</label>
-            <input type="time" class="form-control" name="time" required>
-            <div class="invalid-feedback">
-              Please select appointment time
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="comment">Comment:</label>
-          <textarea class="form-control" rows="5" name="comment"></textarea>
-        </div>
-        <button type="submit" class="btn btn-info">Submit</button>
-        </form>
-      </div>
     </div>
+    <hr>
+    <div class="middle">
+      <h6>* Which of the following methods do you think is most often used to pay for Funeral Expenses?</h6>
+      <ul class="inline">
+        <li>CAR WASH -</li>
+        <li>FAMILY LOANS -</li>
+        <li>SAVINGS -</li>
+        <li>OTHER</li>
+      </ul>
+      <h6>* By far, the biggest concern regarding Funeral Expenses is that the burden is usually left behind to a loved one who
+        is unprepared. There are four main reasons this happens, which of these categories would you place yourself in?</h6>
+      <ul>
+        <li>
+          <strong>FEAR</strong>, many people are scared to talk about the subject so they never discuss a plan</li>
+        <li>
+          <strong>PROCRASTINATION</strong>, many people wait for the ‘right time,’ but never get around to it</li>
+        <li>
+          <strong>AFFORDABILITY</strong>, many people think it is expensive to plan ahead so they don’t ever look into it</li>
+        <li>
+          <strong>QUALIFICATION</strong>, many people think they will be rejected due to sickness or age</li>
+      </ul>
+      <h6>* Do you know of someone or maybe you yourself have been in the rush of having to get the money for the funeral of
+        a loved one?
+      </h6>
+      <ul class="inline">
+        <li>YES or</li>
+        <li>NO</li>
+      </ul>
+      <h6>* What would you prefer for your final arrangements?</h6>
+      <ul class="inline">
+        <li>BURIAL or</li>
+        <li>CREMATION</li>
+      </ul>
+      <h6>* How much do you estimate that would cost?</h6>
+      <h6>* Who will be responsible for your funeral arrangements someday?</h6>
+      <ul class="inline">
+        <li>FAMILY -</li>
+        <li>FRIEND -</li>
+        <li>OTHER -</li>
+        <li>DON'T KNOW</li>
+      </ul>
+      <h6>* How will your final arrangements be paid?</h6>
+      <ul class="inline">
+        <li>CAR WASH -</li>
+        <li>LOANS -</li>
+        <li>SAVINGS -</li>
+        <li>OTHER -</li>
+        <li>DON'T KNOW</li>
+      </ul>
+    </div>
+    <hr>
+    <div class="bottom">
+      <p class="scripted">We are the largest agency in the country in final expenses and we are struck by the little or no information that neighbors
+        in the area have regarding funeral expenses.
+        <strong>THE FUNERAL ADVANTAGE PLAN</strong> is a program that offers a
+        <strong>SIMPLE AND ECONOMIC</strong> solution to
+        <strong>PREVENT</strong> leaving this burden to your loved ones, we can solve this problem. You will be amazed at how easy
+        it is to qualify and right now the program is offering a
+        <strong>FREE</strong> Funeral Planning Membership for those who enroll with plans as low as $15/month. What would be good
+        day to visit you and be able to deliver your
+        <strong>PERSONALIZED PACKAGE INFORMATION</strong>, without any commitment on your part? (
+        <strong>NOTE</strong>: Give a tentative date for the appointment, no more than two days)</p>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" class="form-control" name="address" placeholder="1234 Main St" required>
+        <div class="invalid-feedback">
+          Please enter address
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="address2">Address 2</label>
+        <input type="text" class="form-control" name="address2" placeholder="Apartment, studio, or floor">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-7">
+          <label for="city">City</label>
+          <input type="text" class="form-control" name="city" required>
+          <div class="invalid-feedback">
+            Please enter city
+          </div>
+        </div>
+        <div class="form-group col-md">
+          <label for="state">State</label>
+          <select name="state" class="form-control">
+            <option value="AK">Alaska</option>
+            <option value="AL">Alabama</option>
+            <option value="AR">Arkansas</option>
+            <option value="AZ" selected>Arizona</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DC">District of Columbia</option>
+            <option value="DE">Delaware</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="IA">Iowa</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MD">Maryland</option>
+            <option value="ME">Maine</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MO">Missouri</option>
+            <option value="MS">Mississippi</option>
+            <option value="MT">Montana</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="NE">Nebraska</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NV">Nevada</option>
+            <option value="NY">New York</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="PR">Puerto Rico</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VA">Virginia</option>
+            <option value="VT">Vermont</option>
+            <option value="WA">Washington</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WV">West Virginia</option>
+            <option value="WY">Wyoming</option>
 
-    <script>
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-      (function () {
-        'use strict';
-        window.addEventListener('load', function () {
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.getElementsByClassName('needs-validation');
-          // Loop over them and prevent submission
-          var validation = Array.prototype.filter.call(forms, function (form) {
-            form.addEventListener('submit', function (event) {
-              if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-            }, false);
-          });
-        }, false);
-      })();
-    </script>
-  </body>
+          </select>
+        </div>
+        <div class="form-group col-md">
+          <label for="zip">Zip</label>
+          <input type="text" class="form-control" name="zip" required>
+          <div class="invalid-feedback">
+            Please enter zip code
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="phone">Phone Number</label>
+          <input type="tel" class="form-control" name="phone" required>
+          <div class="invalid-feedback">
+            Please enter valid phone number
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="date">Appointment Date</label>
+          <input type="date" class="form-control" name="date" required>
+          <div class="invalid-feedback">
+            Please select appointment date
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="time">Appointment Time</label>
+          <input type="time" class="form-control" name="time" required>
+          <div class="invalid-feedback">
+            Please select appointment time
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea class="form-control" rows="5" name="comment"></textarea>
+      </div>
+      <button type="submit" class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+      'use strict';
+      window.addEventListener('load', function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function (form) {
+          form.addEventListener('submit', function (event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
+</body>
+
 </html>
