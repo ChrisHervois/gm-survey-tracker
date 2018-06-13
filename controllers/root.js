@@ -13,5 +13,8 @@ module.exports = {
         req.session.save(() => {
             res.redirect('/survey')
         })
+    },
+    test: function (req, res) {
+        res.render('test')
     }
 }

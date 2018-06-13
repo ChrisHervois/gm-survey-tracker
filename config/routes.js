@@ -6,6 +6,7 @@ module.exports = function(app){
 
   app.get('/', root.index);
   app.post('/login', root.login)
+  app.get('/test', root.test)
 
   app.use(authMiddleware);
 

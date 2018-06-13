@@ -6,41 +6,127 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
     <style>
       body {
-        background-color: #d5d5d5;
-        margin: 5em;
+        background-color: #9099a2;
+        margin: 1em 5em 5em 5em;
       }
-      h1 {
+      h1, h2 {
         text-align: center;
-        color: #6d7993;
-        margin-bottom: 1em;
+        color: #062f4f;
+        
+      }
+      .inline li {
+        display: inline;
+      }
+      .container-fluid {
+        background-color: #d5d5d5;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      h6 {
+        color: #233237;
+      }
+      .scripted {
+        color: #0a1612;
       }
     </style>
   </head>
   <body>
-    <h1>Welcome <%=user%></h1> 
+    <h1>FUNERAL ADVANTAGE – Neighborhood Survey</h1>
+    <h2>FINAL EXPENSE FUNDING AND PLANNING</h2> <br>
+    
+
+
+
+    <!-- <h1>Welcome <%=user%></h1>  -->
     
     <div class="container-fluid">
-      <form action="/send" method="post" class="needs-validation" novalidate>
-        <div class="form-row">
-          <div class="form-group col-md-5">
-            <input type="text" class="form-control" name="first" placeholder="First name" required>
-            <div class="invalid-feedback">
-              Please enter first name
+      <div class="top">
+        <form action="/send" method="post" class="needs-validation" novalidate>
+          <div class="form-row">
+            <p class="scripted">Hi, my name is
+              <strong>
+                <%=user%>
+              </strong>, with the
+              <strong>GOLDEN MEMORIAL AGENCY</strong>. We are in the area doing a quick survey for our agency. Please, could you give me
+              2-3 minutes to do a quick survey? THANK YOU! Have you ever seen a carwash on the corner raising money for Funeral Expenses?
+              This is a survey about addressing that concern. Let’s start with your name and age.</p>
+            <div class="form-group col-md-5">
+              <input type="text" class="form-control" name="first" placeholder="First name" required>
+              <div class="invalid-feedback">
+                Please enter first name
+              </div>
+            </div>
+            <div class="form-group col-md-5">
+              <input type="text" class="form-control" name="last" placeholder="Last name" required>
+              <div class="invalid-feedback">
+                Please enter last name
+              </div>
+            </div>
+            <div class="form-group col-md-2">
+              <input type="number" class="form-control" name="age" placeholder="Age" required>
+              <div class="invalid-feedback">
+                Please enter age
+              </div>
             </div>
           </div>
-          <div class="form-group col-md-5">
-            <input type="text" class="form-control" name="last" placeholder="Last name" required>
-            <div class="invalid-feedback">
-              Please enter last name
-            </div>
-          </div>
-          <div class="form-group col-md-2">
-            <input type="number" class="form-control" name="age" placeholder="Age" required>
-            <div class="invalid-feedback">
-              Please enter age
-            </div>
-          </div>
-        </div>
+      </div>
+      <hr>
+      <div class="middle">
+        <h6>* Which of the following methods do you think is most often used to pay for Funeral Expenses?</h6>
+        <ul class="inline">
+          <li>CAR WASH -</li>
+          <li>FAMILY LOANS -</li>
+          <li>SAVINGS -</li>
+          <li>OTHER</li>
+        </ul>
+        <h6>* By far, the biggest concern regarding Funeral Expenses is that the burden is usually left behind to a loved one who is
+        unprepared. There are four main reasons this happens, which of these categories would you place yourself in?</h6>
+        <ul>
+          <li><strong>FEAR</strong>, many people are scared to talk about the subject so they never discuss a plan</li>
+          <li><strong>PROCRASTINATION</strong>, many people wait for the ‘right time,’ but never get around to it</li>
+          <li><strong>AFFORDABILITY</strong>, many people think it is expensive to plan ahead so they don’t ever look into it</li>
+          <li><strong>QUALIFICATION</strong>, many people think they will be rejected due to sickness or age</li>
+        </ul>
+        <h6>* Do you know of someone or maybe you yourself have been in the rush of having to get the money for the funeral of a loved
+        one?</h6>
+        <ul class="inline">
+          <li>YES or</li>
+          <li>NO</li>
+        </ul>
+        <h6>* What would you prefer for your final arrangements?</h6>
+        <ul class="inline">
+          <li>BURIAL or</li>
+          <li>CREMATION</li>
+        </ul>
+        <h6>* How much do you estimate that would cost?</h6>
+        <h6>* Who will be responsible for your funeral arrangements someday?</h6>
+        <ul class="inline">
+          <li>FAMILY -</li>
+          <li>FRIEND -</li>
+          <li>OTHER -</li>
+          <li>DON'T KNOW</li>
+        </ul>
+        <h6>* How will your final arrangements be paid?</h6>
+        <ul class="inline">
+          <li>CAR WASH -</li>
+          <li>LOANS -</li>
+          <li>SAVINGS -</li>
+          <li>OTHER -</li>
+          <li>DON'T KNOW</li>
+        </ul>
+      </div>
+      <hr>
+      <div class="bottom">
+        <p class="scripted">We are the largest agency in the country in final expenses and we are struck by the little or no information that neighbors
+          in the area have regarding funeral expenses.
+          <strong>THE FUNERAL ADVANTAGE PLAN</strong> is a program that offers a
+          <strong>SIMPLE AND ECONOMIC</strong> solution to
+          <strong>PREVENT</strong> leaving this burden to your loved ones, we can solve this problem. You will be amazed at how easy it is
+          to qualify and right now the program is offering a
+          <strong>FREE</strong> Funeral Planning Membership for those who enroll with plans as low as $15/month. What would be good day to
+          visit you and be able to deliver your
+          <strong>PERSONALIZED PACKAGE INFORMATION</strong>, without any commitment on your part? (
+          <strong>NOTE</strong>: Give a tentative date for the appointment, no more than two days)</p>
         <div class="form-group">
           <label for="address">Address</label>
           <input type="text" class="form-control" name="address" placeholder="1234 Main St" required>
@@ -115,7 +201,7 @@
               <option value="WI">Wisconsin</option>
               <option value="WV">West Virginia</option>
               <option value="WY">Wyoming</option>
-      
+        
             </select>
           </div>
           <div class="form-group col-md">
@@ -154,7 +240,8 @@
           <textarea class="form-control" rows="5" name="comment"></textarea>
         </div>
         <button type="submit" class="btn btn-info">Submit</button>
-      </form>
+        </form>
+      </div>
     </div>
 
     <script>

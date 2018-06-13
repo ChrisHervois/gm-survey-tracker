@@ -21,7 +21,7 @@ module.exports = {
       'summary': `ENC (${req.session.name}) ${req.body.first} ${req.body.last} (${req.body.age})`, 
       'status': 'confirmed',
       'description': `${req.body.phone} / ${req.body.comment}`,
-      'colorId': 1
+      'colorId': 4
     };
 
     cal.Events.insert(calendarId, event)
