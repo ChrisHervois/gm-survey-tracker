@@ -15,6 +15,6 @@ module.exports = {
         })
     },
     test: function (req, res) {
-        res.render('test')
+        res.render('index', {user:req.session.name})
     }
 }

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <title>Page Title</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+</head>
+
+<body>
+    <h1>Welcome <%= user %></h1>
+    <input type="text" id="firstName" placeholder="John">
+    <br>
+    <br>
+    <input type="text" id="lastName" placeholder="Wick">
+    <br>
+    <br>
+
+    <input type="number" id="age" placeholder="45">
+    <br>
+    <br>
+    <input type="text" id="address" placeholder="1234 E. Main St.">
+    <br>
+    <br>
+    <input type="text" id="addressTwo" placeholder="Apt. 314K">
+    <br>
+    <br>
+    <input type="text" id="city" placeholder="Phoenix">
+    <br>
+    <br>
+    <input type="text" id="state" value="AZ">
+    <br>
+    <br>
+    <input type="number" id="zip" placeholder="43756">
+    <br>
+    <br>
+    <input type="tel" id="phone" placeholder="(123) 456-7890">
+    <br>
+    <br>
+
+
+    <input type="date" id="date" placeholder="2018-06-15">
+    <br>
+    <br>
+
+    <input type="time" id="time" placeholder="11:30">
+    <br>
+    <br>
+    <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+    <br>
+    <br>
+
+
+
+    <button id="add">Add</button>
+    <br>
+    <br>
+    <br>
+    <button id="clear">Clear</button>
+    <br>
+    <br>
+    <br>
+
+
+    <button id="upload">Upload Appointments</button>
+
+    <script>
+        let appts = [];
+        // Inputs
+        const firstName = document.querySelector('#firstName');
+        const lastName = document.querySelector('#lastName');
+        const age = document.querySelector('#age');
+        const address = document.querySelector('#address');
+        const addressTwo = document.querySelector('#addressTwo');
+        const city = document.querySelector('#city');
+        const state = document.querySelector('#state');
+        const zip = document.querySelector('#zip');
+        const phone = document.querySelector('#phone');
+        const date = document.querySelector('#date');
+        const time = document.querySelector('#time');
+        const comment = document.querySelector('#comment');
+
+        // Add 
+        const add = document.querySelector('#add');
+
+        add.addEventListener('click', () => {
+            let key = phone.value;
+            let input = {
+                'firstName': firstName.value,
+                'lastName': lastName.value,
+                'age': age.value,
+                'address': address.value,
+                'address2': addressTwo.value,
+                'city': city.value,
+                'state': state.value,
+                'zip': zip.value,
+                'phone': phone.value,
+                'date': date.value,
+                'time': time.value,
+                'comment': comment.value
+            }
+            localStorage.setItem(`${key}`, JSON.stringify(input));
+            console.log(`${key}`, JSON.stringify(input));
+            // phone.value = '';
+
+        })
+
+        // Clear
+        const clear = document.querySelector('#clear');
+
+        clear.addEventListener('click', () => {
+            appts = [];
+            localStorage.clear();
+            alert('Storage cleared!')
+        })
+
+        // Upload
+        
+        function postItem() {
+            $.ajax({
+                type: "POST",
+                // dataType: "json",
+                url: " http://localhost:8000/appt.json",
+                timeout: 5000,
+                data: { '': appts },
+                // data: { 'appts': [JSON.stringify(appts)]},
+                success: function (data) {
+                    //show content
+                    localStorage.clear();
+                    alert('Upload Complete')
+                },
+                error: function (jqXHR, textStatus, err) {
+                    //show error message
+                    alert('Upload failed. Please try again.')
+                }
+            });
+        }//postItem()
+
+        $('#upload').on('click', function () {
+            appts = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                appts.push(localStorage.getItem(localStorage.key(i)))
+            }
+
+            postItem();
+        });
+
+
+    </script>
+</body>
+
+</html>

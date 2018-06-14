@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Survey</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+  <script src="../survey.js"></script>
   <style>
     body {
       background-color: #9099a2;
@@ -44,7 +45,7 @@
   <br>
   <div class="container-fluid">
     <div class="top">
-      <form action="/send" method="post" class="needs-validation" novalidate>
+      <form method="POST" class="needs-validation" novalidate>
         <div class="form-row">
           <p class="scripted">Hi, my name is
             <strong>
@@ -247,12 +248,20 @@
         <label for="comment">Comment:</label>
         <textarea class="form-control" rows="5" name="comment"></textarea>
       </div>
-      <button type="submit" class="btn btn-info">Submit</button>
+      <button type="submit" id="send" class="btn btn-info">Submit</button>
       </form>
     </div>
   </div>
 
   <script>
+    const submit = document.querySelector('#send');
+
+      submit.addEventListener('click', () => {
+        alert('whats up yo')
+      })
+  </script>
+
+  <!-- <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function () {
       'use strict';
@@ -271,7 +280,7 @@
         });
       }, false);
     })();
-  </script>
+  </script> -->
 </body>
 
 </html>
