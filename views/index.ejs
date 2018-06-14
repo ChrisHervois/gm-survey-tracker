@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <h1 id="error"></h1>
     <h1>Welcome <%= user %></h1>
     <input type="text" id="firstName" placeholder="John">
     <br>
@@ -68,6 +69,8 @@
     <button id="upload">Upload Appointments</button>
 
     <script>
+        const error = document.querySelector('#error')
+
         let appts = [];
         // Inputs
         const firstName = document.querySelector('#firstName');
@@ -124,7 +127,7 @@
                 type: "POST",
                 // dataType: "json",
                 // url: " http://localhost:8000/appt.json",
-                url: " http://still-ocean-25039.herokuapp.com/upload",
+                // url: " http://still-ocean-25039.herokuapp.com/upload",
                 timeout: 5000,
                 data: { '': appts },
                 // data: { 'appts': [JSON.stringify(appts)]},
@@ -135,6 +138,8 @@
                 },
                 error: function (jqXHR, textStatus, err) {
                     //show error message
+                    console.log(err)
+                    error.innerHTML = err;
                     alert('Upload failed. Please try again.')
                 }
             });
