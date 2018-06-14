@@ -24,7 +24,7 @@ module.exports = {
       // console.log(`iteration ${key} is`, appt)
       let event = {
         'start': { 'dateTime': `${appt.date}T${appt.time}:00-07:00` },
-        // 'end': { 'dateTime': `${appt.date}T${appt.time}:00-08:00` },
+        'end': { 'dateTime': `${appt.date}T${appt.time}:00-08:00` },
         'location': `${appt.address} ${appt.address2}, ${appt.city}, ${appt.state} ${appt.zip}`,
         'summary': `ENC (${req.session.name}) ${appt.firstName} ${appt.lastName} (${appt.age})`,
         'status': 'confirmed',
