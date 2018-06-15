@@ -16,6 +16,8 @@ module.exports = {
   },
   incoming: function (req, res) {
     let appts = (req.body)
+    let finalKey = Object.keys(appts)[Object.keys(appts).length-1];
+    
     
     // Begin loop
     for (let key in appts) {
@@ -31,19 +33,25 @@ module.exports = {
         'description': `${appt.phone} / ${appt.comment}`,
         'colorId': 4
       };
-
+      
       cal.Events.insert(calendarId, event)
+        .then(() => {
+          if (key === finalKey) {
+            res.redirect('/')
+          }
+        })
         .catch(err => {
           throw err;
         });
+      
 
 
     }
     // End loop
       
-    res.redirect('/')
     
-
+    
+    
 
 
 

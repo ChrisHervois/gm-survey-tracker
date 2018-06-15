@@ -11,7 +11,6 @@
 </head>
 
 <body>
-    <h1 id="error"></h1>
     <h1>Welcome <%= user %></h1>
     <input type="text" id="firstName" placeholder="John">
     <br>
@@ -69,7 +68,7 @@
     <button id="upload">Upload Appointments</button>
 
     <script>
-        const error = document.querySelector('#error')
+        
 
         let appts = [];
         // Inputs
@@ -106,7 +105,6 @@
                 'comment': comment.value
             }
             localStorage.setItem(`${key}`, JSON.stringify(input));
-            console.log(`${key}`, JSON.stringify(input));
             // phone.value = '';
 
         })
@@ -126,21 +124,20 @@
             $.ajax({
                 type: "POST",
                 // dataType: "json",
-                // url: " http://localhost:8000/appt.json",
-                url: " https://still-ocean-25039.herokuapp.com/upload",
-                timeout: 5000,
+                url: " http://localhost:8000/appt.json",
+                // url: " https://still-ocean-25039.herokuapp.com/upload",
+                timeout: 2500,
                 data: { '': appts },
                 // data: { 'appts': [JSON.stringify(appts)]},
                 success: function (data) {
                     //show content
                     localStorage.clear();
-                    alert('Upload Complete')
+                    alert('Upload Complete. Thanks for your hard work today!')
                 },
                 error: function (jqXHR, textStatus, err) {
                     //show error message
-                    console.log(err)
-                    error.innerHTML = err;
-                    alert('Upload failed. Please try again.')
+                    
+                    alert("Hmm, something went wrong. If problem persists, please contact admin")
                 }
             });
         }//postItem()

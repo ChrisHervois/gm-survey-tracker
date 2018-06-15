@@ -11,7 +11,8 @@ function youShallPass (req, res, next) {
 
 module.exports = function(app){
   app.use(youShallPass)
-  app.post('/upload', survey.incoming)
+  // app.post('/upload', survey.incoming)
+  app.post('/appt.json', survey.incoming)
   app.get('/', root.index);
   app.post('/login', root.login)
   
