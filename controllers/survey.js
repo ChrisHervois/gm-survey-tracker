@@ -16,10 +16,9 @@ module.exports = {
   },
   incoming: function (req, res) {
     let appts = (req.body)
-    let finalKey = Object.keys(appts)[Object.keys(appts).length-1];
-    
     
     // Begin loop
+    let promiseArr = []
     for (let key in appts) {
       
       let appt = JSON.parse(appts[key])
@@ -34,22 +33,17 @@ module.exports = {
         'colorId': 4
       };
       
-      cal.Events.insert(calendarId, event)
-        .then(() => {
-          if (key === finalKey) {
-            res.redirect('/')
-          }
-        })
-        .catch(err => {
-          throw err;
-        });
-      
-
-
+      promiseArr(cal.Events.insert(calendarId, event))
+       
+    
     }
     // End loop
       
-    
+    Promise.all(promiseArr).then(()=>{
+      res.redirect("/");
+    }).catch(()=>{
+      
+    })
     
     
 
